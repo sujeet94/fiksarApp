@@ -1,0 +1,13 @@
+.signup-container{
+    padding-left: 40px;
+    background-color:#f7f4ef
+}
+.alert-class{
+    background-color: #f2dfdf;
+    font-size: 13px;
+    margin-top: 3px;
+    padding: 2px;
+    border-radius: 5px;
+    width: 80%;
+    color: red;
+}

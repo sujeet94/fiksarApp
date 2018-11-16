@@ -1,0 +1,77 @@
+<div class="container-fluid signup-container">
+  <div class="row">
+    <h1>Sign Up</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-10">
+      <form (ngSubmit)="submitForm(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="username">Username *</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="username" required ngModel #username="ngModel"
+            minlength="5">
+          <div *ngIf="username.touched  && username.errors" class="alert-class">
+            <div *ngIf="username.errors.required">Username required</div>
+            <div *ngIf="username.errors.minlength">Username Should be min 5 char</div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" email required ngModel #email="ngModel">
+          <div *ngIf="email.touched && email.errors" class="alert-class">
+            <div *ngIf="email.errors.required">Email required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password *</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" required ngModel #password="ngModel"
+            minlength="8">
+          <div *ngIf="password.touched && password.errors" class="alert-class">
+            <div *ngIf="password.errors.required">Password required</div>
+            <div *ngIf="password.errors.minlength">Password must be of atleast 8 characters</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="number">Contact number *</label>
+          <input type="number" class="form-control" id="number" name="number" placeholder="number" required ngModel #number="ngModel"
+            minlength="10">
+          <div *ngIf="number.touched && number.errors" class="alert-class">
+            <div *ngIf="number.errors.required">Number required</div>
+            <div *ngIf="number.errors.minlength">Enter a valid Mobile Number</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth *</label>
+          <input type="date" class="form-control" id="dob" name="dob" placeholder="dob" required ngModel #dob="ngModel" max="{{maxDate}}"
+            min="{{minDate}}" (blur)="checkDob(dob)">
+          <div *ngIf="dob.touched && dob.errors" class="alert-class">
+            <div *ngIf="dob.errors.required">Date of Birth is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <label for="gender"> SEX</label> -->
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" ngModel required>
+            <label class="form-check-label" for="gender1">
+              Male
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender2" value="female" ngModel required>
+            <label class="form-check-label" for="gender2">
+              Female
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender3" value="others" ngModel required>
+            <label class="form-check-label" for="gender3">
+              Others
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]=' !f.valid '>Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
