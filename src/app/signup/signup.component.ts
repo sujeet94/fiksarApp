@@ -11,13 +11,13 @@ export class SignupComponent implements OnInit {
   minDate: String = "1960-01-01";
   constructor() {
     // this.date = this.datePipe.transform(new Date(), "yyyy-mm-dd");
-    console.log(this.maxDate)
+    // console.log(this.maxDate)
   }
   ngOnInit() {
 
 
   }
-  checkDob(ss) {
+  checkFnt(ss) {
     console.log(ss);
   }
   submitForm(formData) {

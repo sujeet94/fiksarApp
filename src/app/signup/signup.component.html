@@ -34,11 +34,11 @@
         </div>
         <div class="form-group">
           <label for="number">Contact number *</label>
-          <input type="number" class="form-control" id="number" name="number" placeholder="number" required ngModel #number="ngModel"
-            minlength="10">
+          <input type="text" class="form-control" id="number" name="number" placeholder="number" required ngModel #number="ngModel"
+            (blur)="checkFnt(number)" pattern="^(\+\d{1,3}[- ]?)?\d{10}$">
           <div *ngIf="number.touched && number.errors" class="alert-class">
             <div *ngIf="number.errors.required">Number required</div>
-            <div *ngIf="number.errors.minlength">Enter a valid Mobile Number</div>
+            <div *ngIf="number.errors.pattern">Enter a valid Mobile Number</div>
           </div>
         </div>
         <div class="form-group">
