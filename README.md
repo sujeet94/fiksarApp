@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Functionality
+
+Home Page:
+Signup action works.
+ 
+SignUp page:
+SignUp Validation
+
+1. Username- 5 char.
+2. Email - valid Email.
+3. password - 8 char/number
+4. contact number- 10 digits
+5. DOB - 2010-01-31 - 1960-01-01.
