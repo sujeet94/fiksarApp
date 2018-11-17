@@ -44,7 +44,7 @@
         <div class="form-group">
           <label for="dob">Date of Birth *</label>
           <input type="date" class="form-control" id="dob" name="dob" placeholder="dob" required ngModel #dob="ngModel" max="{{maxDate}}"
-            min="{{minDate}}" (blur)="checkDob(dob)">
+            min="{{minDate}}">
           <div *ngIf="dob.touched && dob.errors" class="alert-class">
             <div *ngIf="dob.errors.required">Date of Birth is required</div>
           </div>
